@@ -162,43 +162,63 @@ function App() {
 
       {/* Main Content */}
       <div className="main-content">
-        {/* Header */}
-        <div className="header">
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-              <span className="body-secondary" style={{ color: '#6B7280' }}>
-                Provisioning / Relational Databases / Oracle Server
-              </span>
-            </div>
-            <h1 className="heading-lg">Create New Oracle Database Service</h1>
+        {/* Top Navigation Bar */}
+        <div className="top-nav">
+          <div className="breadcrumb">
+            <span>Provisioning</span>
+            <span className="breadcrumb-separator">/</span>
+            <span>Relational Databases</span>
+            <span className="breadcrumb-separator">/</span>
+            <span>Oracle Server</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <span className="body-secondary">Credits: $365</span>
-            <div style={{ display: 'flex', gap: '8px' }}>
-              <button className="btn btn-secondary">📋</button>
-              <button className="btn btn-secondary">❓</button>
-              <button className="btn btn-secondary">🔔</button>
-              <div style={{ 
-                width: '32px', 
-                height: '32px', 
-                borderRadius: '50%', 
-                backgroundColor: '#E5E7EB',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                👤
+          <div className="top-nav-actions">
+            <span className="credits">Credits: $365</span>
+            <div className="action-icons">
+              <button className="icon-btn" title="Clipboard">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="m5 15-4-4 4-4"></path>
+                </svg>
+              </button>
+              <button className="icon-btn" title="Help">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <point cx="12" cy="17" r="1"></point>
+                </svg>
+              </button>
+              <button className="icon-btn" title="Notifications">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+              </button>
+              <div className="profile-avatar">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face" alt="Profile" />
               </div>
             </div>
-            <button className="btn btn-secondary">
-              &lt;/&gt; Code
+          </div>
+        </div>
+
+        {/* Page Header */}
+        <div className="page-header">
+          <div className="page-title-section">
+            <h1 className="page-title">Create New Oracle Database Service</h1>
+          </div>
+          <div className="page-actions">
+            <button className="code-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              Code
             </button>
           </div>
         </div>
 
         {/* Content Area */}
         <div className="content-area">
-          <div style={{ display: 'flex', gap: '32px' }}>
+          <div style={{ display: 'flex', gap: '24px' }}>
             {/* Left Panel - Form */}
             <div style={{ flex: '2' }}>
               <div style={{ marginBottom: '24px' }}>
