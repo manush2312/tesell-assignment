@@ -1,5 +1,15 @@
 import { useState } from 'react'
 import './App.css'
+import NotifIcon from './assets/notification-bell.svg?react'
+import QuestionIcon from './assets/question-mark.svg?react'
+import AnnounceIcon from "./assets/announcement.svg?react"
+import DatabaseUser from "./assets/database-user1.svg?react"
+import DatabaseAdd from './assets/database-add.svg?react'
+import AvailableIcon from './assets/available.svg?react'
+import VideoIcon from "./assets/video.svg?react"
+import ScriptIcon from "./assets/script.svg?react"
+import SpeedIcon from "./assets/speed.svg?react"
+import DatabaseIcon from "./assets/database-plain.svg?react"
 
 function App() {
   const [formData, setFormData] = useState({
@@ -118,46 +128,70 @@ function App() {
               DB Services
             </div>
             <a href="#" className="nav-item active">
-              <span>📊</span>
+              <DatabaseUser
+                width="16"
+                height="16"
+                strokeWidth={1.5}
+                style={{ marginTop: '2px' }}
+              />
               <span>My services</span>
             </a>
             <a href="#" className="nav-item">
-              <span>⚙️</span>
+              <DatabaseAdd
+                width="16"
+                height="16"
+                strokeWidth={1.5}
+                style={{ marginTop: '2px' }}
+              />
               <span>Provisioning</span>
             </a>
-            <a href="#" className="nav-item">
-              <span>🔧</span>
+            <a href="#" className="nav-item" style={{}}>
+              <AvailableIcon
+                width="16"
+                height="16"
+                strokeWidth={2}
+                style={{}}
+              />
               <span>Availability Machines</span>
             </a>
             <a href="#" className="nav-item">
-              <span>📈</span>
+              <VideoIcon
+                width="15"
+                height="15"
+                strokeWidth={2}
+                style={{}}
+              />
               <span>Dataflix</span>
             </a>
             <a href="#" className="nav-item">
-              <span>📚</span>
+              <ScriptIcon
+                width="15"
+                height="15"
+                strokeWidth={2}
+                style={{}}
+              />
               <span>ScriptLibrary</span>
             </a>
             <a href="#" className="nav-item">
-              <span>⚡</span>
+              <SpeedIcon
+                width="15"
+                height="15"
+                strokeWidth={2}
+                style={{}}
+              />
               <span>Benchmarks</span>
             </a>
             <a href="#" className="nav-item">
-              <span>🖥️</span>
+              <DatabaseIcon
+                width="16"
+                height="16"
+                strokeWidth={1.5}
+              />
               <span>Servers</span>
             </a>
           </div>
         </nav>
 
-        <div style={{ marginTop: 'auto', paddingTop: '24px' }}>
-          <a href="#" className="nav-item">
-            <span>👥</span>
-            <span>Invite people</span>
-          </a>
-          <a href="#" className="nav-item">
-            <span>❓</span>
-            <span>Help & Support</span>
-          </a>
-        </div>
       </div>
 
       {/* Main Content */}
@@ -172,12 +206,12 @@ function App() {
             </div>
             <h1 className="heading-lg">Create New Oracle Database Service</h1>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <span className="body-secondary">Credits: $365</span>
-            <div style={{ display: 'flex', gap: '8px' }}>
-              <button className="btn btn-secondary">📋</button>
-              <button className="btn btn-secondary">❓</button>
-              <button className="btn btn-secondary">🔔</button>
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <AnnounceIcon width="24" height="24" strokeWidth={4} style={{ marginTop: '3px' }} />
+              <QuestionIcon width="24" height="24" strokeWidth={1} style={{ marginTop: '3px' }} />
+              <NotifIcon width="24" height="24" strokeWidth={1.5} style={{ marginTop: '2px' }} />
               <div style={{
                 width: '32px',
                 height: '32px',
@@ -246,9 +280,9 @@ function App() {
                     <div style={{
                       position: 'absolute',
                       left: '4px',
-                      top: '-65px',
+                      top: '-55px',
                       width: '1px',
-                      height: '75px',
+                      height: '70px',
                       backgroundColor: '#9CA3AF',
                       zIndex: 1
                     }} className="connecting-line"></div>
