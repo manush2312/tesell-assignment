@@ -28,7 +28,7 @@ function App() {
       ...prev,
       [field]: value
     }))
-    
+
     // Clear error when user starts typing
     if (errors[field]) {
       setErrors(prev => ({
@@ -47,19 +47,19 @@ function App() {
 
   const validateForm = () => {
     const newErrors = {}
-    
+
     if (!formData.serviceName.trim()) {
       newErrors.serviceName = 'Service name is required'
     }
-    
+
     if (!formData.softwareRelease) {
       newErrors.softwareRelease = 'Software release is required'
     }
-    
+
     if (!formData.version) {
       newErrors.version = 'Version is required'
     }
-    
+
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
@@ -78,10 +78,10 @@ function App() {
       <div className="sidebar">
         <div style={{ marginBottom: '32px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px' }}>
-            <div style={{ 
-              width: '24px', 
-              height: '24px', 
-              backgroundColor: '#1976D2', 
+            <div style={{
+              width: '24px',
+              height: '24px',
+              backgroundColor: '#1976D2',
               borderRadius: '4px',
               display: 'flex',
               alignItems: 'center',
@@ -98,8 +98,8 @@ function App() {
 
         <nav>
           <div style={{ marginBottom: '16px' }}>
-            <div className="body-secondary" style={{ 
-              color: '#6B7280', 
+            <div className="body-secondary" style={{
+              color: '#6B7280',
               marginBottom: '8px',
               textTransform: 'uppercase',
               letterSpacing: '0.5px'
@@ -107,10 +107,10 @@ function App() {
               Apps
             </div>
           </div>
-          
+
           <div style={{ marginBottom: '24px' }}>
-            <div className="body-secondary" style={{ 
-              color: '#6B7280', 
+            <div className="body-secondary" style={{
+              color: '#6B7280',
               marginBottom: '8px',
               textTransform: 'uppercase',
               letterSpacing: '0.5px'
@@ -178,10 +178,10 @@ function App() {
               <button className="btn btn-secondary">📋</button>
               <button className="btn btn-secondary">❓</button>
               <button className="btn btn-secondary">🔔</button>
-              <div style={{ 
-                width: '32px', 
-                height: '32px', 
-                borderRadius: '50%', 
+              <div style={{
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
                 backgroundColor: '#E5E7EB',
                 display: 'flex',
                 alignItems: 'center',
@@ -199,14 +199,176 @@ function App() {
         {/* Content Area */}
         <div className="content-area">
           <div style={{ display: 'flex', gap: '32px' }}>
+            {/* Right Panel - Summary */}
+            <div style={{ flex: '1' }}>
+              <div style={{
+                position: 'sticky',
+                top: '24px',
+                backgroundColor: 'var(--surface-0)',
+                borderRadius: 'var(--radius-lg)',
+                boxShadow: 'var(--shadow-sm)',
+                border: '1px solid var(--surface-200)',
+                height: "80vh",
+                display: 'flex',
+                alignItems: 'start',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}>
+                <div style={{ padding: '18px', position: 'relative' }}>
+                  <div style={{ marginBottom: '10px', position: 'relative' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <div style={{
+                        width: '8px',
+                        height: '8px',
+                        borderRadius: '50%',
+                        backgroundColor: '#1976D2',
+                        marginTop: '8px',
+                        position: 'relative',
+                        zIndex: 2
+                      }}></div>
+                      <div style={{ flex: 1 }}>
+                        <h3 style={{
+                          color: '#1976D2',
+                          fontSize: '14px',
+                          fontWeight: '600',
+                          marginBottom: '13px',
+                          margin: 0
+                        }}>Service Details</h3>
+                        <div style={{ color: '#6B7280', fontSize: '12px', marginBottom: '16px' }}>
+                          Oracle_service 🔴 | oracle_para_profile
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style={{ position: 'relative' }}>
+                    {/* Connecting line */}
+                    <div style={{
+                      position: 'absolute',
+                      left: '4px',
+                      top: '-65px',
+                      width: '1px',
+                      height: '75px',
+                      backgroundColor: '#9CA3AF',
+                      zIndex: 1
+                    }} className="connecting-line"></div>
+
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <div style={{
+                        width: '8px',
+                        height: '8px',
+                        borderRadius: '50%',
+                        backgroundColor: '#9CA3AF',
+                        marginTop: '8px',
+                        position: 'relative',
+                        zIndex: 2
+                      }}></div>
+                      <div style={{ flex: 1 }}>
+                        <h3 style={{
+                          color: '#000000',
+                          fontSize: '14px',
+                          fontWeight: '600',
+                          marginBottom: '13px',
+                          margin: 0
+                        }}>Additional Settings</h3>
+                        <div style={{ color: '#6B7280', fontSize: '12px' }}>
+                          No Preference Enabled minor version update |<br />
+                          7-day PITR 01:00 snapshot time |
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className=""
+                  style={{
+                    width: '100%',
+                    borderTop: '2px solid lightgray',
+                    padding: '18px',
+                  }}>
+                  <div
+                    className=""
+                    style={{
+                      width: '100%',
+                      display: 'flex',
+                      alignItems: 'start',
+                      justifyContent: 'space-between',
+                      marginBottom: '1.5rem',
+                    }}
+                  >
+                    <div
+                      className=""
+                      style={{
+                        display: "flex",
+                        flexDirection: 'column',
+                        alignItems: 'start',
+                        justifyContent: 'start'
+                      }}
+                    >
+                      <h3 className="heading-md" style={{ fontSize: "16px", color: "gray" }}>Estimated Monthly Price*</h3>
+                      {/* <button
+                        type="button"
+                        className="btn btn-secondary"
+                        style={{
+                          color: '#1976D2',
+                          marginBottom: '4px',
+                          border: '1px solid #1976D2',
+                          background: 'white'
+                        }}
+                      >
+                        View details
+                      </button> */}
+                      <span
+                        style={{
+                          color: '#1976D2',
+                          fontSize: '12px',
+                          fontWeight: "500",
+                          cursor: 'pointer'
+                        }}
+                      >
+                        View details
+                      </span>
+                    </div>
+
+                    <div style={{ fontSize: '24px', fontWeight: '600', color: '#000', }}>
+                      $99.99
+                    </div>
+
+                  </div>
+
+
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    style={{
+                      width: '100%',
+                      padding: '12px',
+                      backgroundColor: '#1976D2',
+                      border: 'none',
+                      borderRadius: '4px',
+                      color: 'white',
+                      fontSize: '16px',
+                      fontWeight: '400',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '8px'
+                    }}
+                    onClick={handleSubmit}
+                  >
+                    + Create service
+                  </button>
+                </div>
+              </div>
+            </div>
             {/* Left Panel - Form */}
             <div style={{ flex: '2' }}>
-              <div style={{ marginBottom: '24px' }}>
+              {/* <div style={{ marginBottom: '24px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                  <div style={{ 
-                    width: '24px', 
-                    height: '24px', 
-                    borderRadius: '50%', 
+                  <div style={{
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: '50%',
                     backgroundColor: '#1976D2',
                     color: 'white',
                     display: 'flex',
@@ -231,7 +393,7 @@ function App() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="form-container">
                 <div className="form-section">
@@ -242,7 +404,7 @@ function App() {
 
                   <div className="form-group">
                     <label className="form-label">Service Name</label>
-                    <select 
+                    <select
                       className="form-select"
                       value={formData.serviceName}
                       onChange={(e) => handleInputChange('serviceName', e.target.value)}
@@ -256,7 +418,7 @@ function App() {
 
                   <div className="form-group">
                     <label className="form-label">Description (optional)</label>
-                    <textarea 
+                    <textarea
                       className="form-textarea"
                       placeholder="Add a description"
                       value={formData.description}
@@ -267,15 +429,15 @@ function App() {
                   <div className="form-group">
                     <label className="form-label">Tags</label>
                     <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
-                      <input 
-                        className="form-input" 
-                        placeholder="Key" 
+                      <input
+                        className="form-input"
+                        placeholder="Key"
                         style={{ flex: 1 }}
                       />
                       <span style={{ alignSelf: 'center' }}>:</span>
-                      <input 
-                        className="form-input" 
-                        placeholder="Value" 
+                      <input
+                        className="form-input"
+                        placeholder="Value"
                         style={{ flex: 1 }}
                       />
                     </div>
@@ -283,7 +445,7 @@ function App() {
                       {formData.tags.map((tag, index) => (
                         <div key={index} className="tag">
                           <span>{tag.key} : {tag.value}</span>
-                          <button 
+                          <button
                             type="button"
                             className="tag-remove"
                             onClick={() => handleTagRemove(index)}
@@ -305,7 +467,7 @@ function App() {
                   <div className="form-row">
                     <div className="form-group">
                       <label className="form-label">Software Release</label>
-                      <select 
+                      <select
                         className="form-select"
                         value={formData.softwareRelease}
                         onChange={(e) => handleInputChange('softwareRelease', e.target.value)}
@@ -318,7 +480,7 @@ function App() {
                     </div>
                     <div className="form-group">
                       <label className="form-label">Version</label>
-                      <select 
+                      <select
                         className="form-select"
                         value={formData.version}
                         onChange={(e) => handleInputChange('version', e.target.value)}
@@ -353,10 +515,10 @@ function App() {
                     <label className="form-label">Window Preference</label>
                     <div className="radio-group">
                       <div className="radio-item">
-                        <input 
-                          type="radio" 
-                          id="no-preference" 
-                          name="windowPreference" 
+                        <input
+                          type="radio"
+                          id="no-preference"
+                          name="windowPreference"
                           value="none"
                           checked={formData.windowPreference === 'none'}
                           onChange={(e) => handleInputChange('windowPreference', e.target.value)}
@@ -365,10 +527,10 @@ function App() {
                         <label htmlFor="no-preference" className="radio-label">No Preferences</label>
                       </div>
                       <div className="radio-item">
-                        <input 
-                          type="radio" 
-                          id="select-window" 
-                          name="windowPreference" 
+                        <input
+                          type="radio"
+                          id="select-window"
+                          name="windowPreference"
                           value="select"
                           checked={formData.windowPreference === 'select'}
                           onChange={(e) => handleInputChange('windowPreference', e.target.value)}
@@ -382,7 +544,7 @@ function App() {
                   <div className="form-row">
                     <div className="form-group">
                       <label className="form-label">Start day</label>
-                      <select 
+                      <select
                         className="form-select"
                         value={formData.startDay}
                         onChange={(e) => handleInputChange('startDay', e.target.value)}
@@ -398,7 +560,7 @@ function App() {
                     </div>
                     <div className="form-group">
                       <label className="form-label">Start time</label>
-                      <input 
+                      <input
                         type="time"
                         className="form-input"
                         value={formData.startTime}
@@ -409,7 +571,7 @@ function App() {
 
                   <div className="form-group">
                     <label className="form-label">Duration</label>
-                    <select 
+                    <select
                       className="form-select"
                       value={formData.duration}
                       onChange={(e) => handleInputChange('duration', e.target.value)}
@@ -423,13 +585,13 @@ function App() {
 
                   <div className="form-group">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <input 
+                      <input
                         type="checkbox"
                         id="auto-minor-update"
                         checked={formData.autoMinorUpdate}
                         onChange={(e) => handleInputChange('autoMinorUpdate', e.target.checked)}
-                        style={{ 
-                          width: '16px', 
+                        style={{
+                          width: '16px',
                           height: '16px',
                           accentColor: '#1976D2'
                         }}
@@ -450,7 +612,7 @@ function App() {
                   <div className="form-row">
                     <div className="form-group">
                       <label className="form-label">SLA</label>
-                      <select 
+                      <select
                         className="form-select"
                         value={formData.sla}
                         onChange={(e) => handleInputChange('sla', e.target.value)}
@@ -462,7 +624,7 @@ function App() {
                     </div>
                     <div className="form-group">
                       <label className="form-label">Snapshot time</label>
-                      <input 
+                      <input
                         type="time"
                         className="form-input"
                         value={formData.snapshotTime}
@@ -475,30 +637,30 @@ function App() {
                     <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid var(--surface-200)' }}>
                       <thead>
                         <tr style={{ backgroundColor: 'var(--surface-50)', borderBottom: '1px solid var(--surface-200)' }}>
-                          <th style={{ 
-                            textAlign: 'left', 
-                            padding: '12px', 
-                            fontSize: '12px', 
+                          <th style={{
+                            textAlign: 'left',
+                            padding: '12px',
+                            fontSize: '12px',
                             color: '#1976D2',
                             fontWeight: '550',
                             borderRight: '1px solid var(--surface-200)'
                           }}>
                             Header ↕
                           </th>
-                          <th style={{ 
-                            textAlign: 'left', 
-                            padding: '12px', 
-                            fontSize: '12px', 
+                          <th style={{
+                            textAlign: 'left',
+                            padding: '12px',
+                            fontSize: '12px',
                             color: '#1976D2',
                             fontWeight: '550',
                             borderRight: '1px solid var(--surface-200)'
                           }}>
                             Header ↕
                           </th>
-                          <th style={{ 
-                            textAlign: 'left', 
-                            padding: '12px', 
-                            fontSize: '12px', 
+                          <th style={{
+                            textAlign: 'left',
+                            padding: '12px',
+                            fontSize: '12px',
                             color: '#1976D2',
                             fontWeight: '550'
                           }}>
@@ -509,8 +671,8 @@ function App() {
                       <tbody>
                         {[1, 2, 3, 4].map((row) => (
                           <tr key={row} style={{ borderBottom: '1px solid var(--surface-200)' }}>
-                            <td style={{ 
-                              padding: '12px', 
+                            <td style={{
+                              padding: '12px',
                               borderRight: '1px solid var(--surface-200)',
                               verticalAlign: 'middle'
                             }}>
@@ -519,18 +681,18 @@ function App() {
                                 <span style={{ color: '#1976D2', fontSize: '13px' }}>Link</span>
                               </div>
                             </td>
-                            <td style={{ 
-                              padding: '12px', 
+                            <td style={{
+                              padding: '12px',
                               borderRight: '1px solid var(--surface-200)',
                               fontSize: '13px'
                             }}>
                               Row Title
                             </td>
                             <td style={{ padding: '12px' }}>
-                              <button 
-                                className="btn btn-secondary" 
-                                style={{ 
-                                  color: '#1976D2', 
+                              <button
+                                className="btn btn-secondary"
+                                style={{
+                                  color: '#1976D2',
                                   fontSize: '13px',
                                   padding: '4px 8px',
                                   border: 'none',
@@ -546,10 +708,10 @@ function App() {
                     </table>
                   </div>
 
-                  <div style={{ 
-                    marginTop: '16px', 
-                    padding: '12px', 
-                    backgroundColor: '#E3F2FD', 
+                  <div style={{
+                    marginTop: '16px',
+                    padding: '12px',
+                    backgroundColor: '#E3F2FD',
                     borderRadius: '4px',
                     display: 'flex',
                     alignItems: 'center',
@@ -560,10 +722,10 @@ function App() {
                     <span className="body-secondary" style={{ color: '#1976D2', fontSize: '13px' }}>
                       Projecting an estimate total count of 71 snapshots with the above configuration.
                     </span>
-                    <button style={{ 
-                      marginLeft: 'auto', 
-                      background: 'none', 
-                      border: 'none', 
+                    <button style={{
+                      marginLeft: 'auto',
+                      background: 'none',
+                      border: 'none',
                       color: '#1976D2',
                       cursor: 'pointer',
                       fontSize: '16px'
@@ -574,9 +736,9 @@ function App() {
             </div>
 
             {/* Right Panel - Summary */}
-            <div style={{ flex: '1' }}>
-              <div style={{ 
-                position: 'sticky', 
+            {/* <div style={{ flex: '1' }}>
+              <div style={{
+                position: 'sticky',
                 top: '24px',
                 backgroundColor: 'var(--surface-0)',
                 borderRadius: 'var(--radius-lg)',
@@ -588,11 +750,11 @@ function App() {
                 <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000', marginBottom: '8px' }}>
                   $99.99
                 </div>
-                <button 
-                  type="button" 
-                  className="btn btn-secondary" 
-                  style={{ 
-                    color: '#1976D2', 
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  style={{
+                    color: '#1976D2',
                     marginBottom: '24px',
                     border: '1px solid #1976D2',
                     background: 'white'
@@ -600,12 +762,12 @@ function App() {
                 >
                   View details
                 </button>
-                
-                <button 
-                  type="submit" 
+
+                <button
+                  type="submit"
                   className="btn btn-primary"
-                  style={{ 
-                    width: '100%', 
+                  style={{
+                    width: '100%',
                     padding: '12px',
                     backgroundColor: '#1976D2',
                     border: 'none',
@@ -623,7 +785,7 @@ function App() {
                   ➕ Create service
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
